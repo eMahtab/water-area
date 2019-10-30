@@ -1,4 +1,4 @@
-package net.mahtabalam;
+package net.mahtabalam.v1;
 
 import java.util.Arrays;
 
@@ -24,8 +24,8 @@ class Water {
 		left[0] = 0;
 		int leftMax = arr[0];
 		for (int i = 1; i < arr.length; i++) {
-			leftMax = Math.max(leftMax, arr[i - 1]);
 			left[i] = leftMax;
+			leftMax = Math.max(leftMax, arr[i]);
 		}
 
 		System.out.println("Left " + Arrays.toString(left));
@@ -34,8 +34,9 @@ class Water {
 		right[arr.length - 1] = 0;
 		int rightMax = arr[arr.length - 1];
 		for (int i = arr.length - 2; i >= 0; i--) {
-			rightMax = Math.max(rightMax, arr[i]);
 			right[i] = rightMax;
+			rightMax = Math.max(rightMax, arr[i]);
+
 		}
 		System.out.println("Right " + Arrays.toString(right));
 
