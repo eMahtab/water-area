@@ -12,6 +12,8 @@ class Water {
 
 	static int waterArea(int arr[]) {
 		// left[i] contains height of tallest bar to the left of i'th bar
+		if (arr.length == 0)
+			return 0;
 		int left[] = new int[arr.length];
 
 		// right[i] contains height of tallest bar to the right of ith bar
