@@ -1,24 +1,22 @@
 package net.mahtabalam.v1;
 
-import java.util.Arrays;
-
 class Water {
 
 	public static void main(String[] args) {
-		int arr[] = { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 };
-//		int arr[] = {3, 0, 0, 2, 0, 4};
+		int arr[] = { 3, 0, 0, 2, 0, 4 };
 		System.out.println("Total water that can be trapped is " + waterArea(arr));
 	}
 
-	static int waterArea(int arr[]) {
-		// left[i] contains height of tallest bar to the left of i'th bar
+	public static int waterArea(int arr[]) {
+
 		if (arr.length == 0)
 			return 0;
+
+		// left[i] stores the height of tallest bar to the left of i'th bar
 		int left[] = new int[arr.length];
 
-		// right[i] contains height of tallest bar to the right of ith bar
+		// right[i] stores the height of tallest bar to the right of i'th bar
 		int right[] = new int[arr.length];
-		int totalWater = 0;
 
 		// Fill left array
 		left[0] = 0;
@@ -28,8 +26,6 @@ class Water {
 			leftMax = Math.max(leftMax, arr[i]);
 		}
 
-		System.out.println("Left " + Arrays.toString(left));
-
 		// Fill right array
 		right[arr.length - 1] = 0;
 		int rightMax = arr[arr.length - 1];
@@ -38,10 +34,11 @@ class Water {
 			rightMax = Math.max(rightMax, arr[i]);
 
 		}
-		System.out.println("Right " + Arrays.toString(right));
 
-		int minHeight = Integer.MIN_VALUE;
+		int minHeight = 0;
 		int water = 0;
+		int totalWater = 0;
+
 		for (int i = 0; i < arr.length; i++) {
 			minHeight = Math.min(left[i], right[i]);
 			if (minHeight > arr[i]) {
