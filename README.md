@@ -1,5 +1,5 @@
-# Water Area Problem
-Java implementation for the Water area problem.
+# Trapping Rain Water
+## https://leetcode.com/problems/trapping-rain-water
 
 
 # Implementation 1 :
