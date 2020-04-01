@@ -8,7 +8,7 @@ Given n non-negative integers representing an elevation map where the width of e
 The above elevation map is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. In this case, 6 units of rain water (blue section) is being trapped. 
 
 
-# Implementation 1 :
+# Implementation 1 : Time : O(n), Space : O(n)
 ```java
 class Solution {
     public int trap(int[] height) {
@@ -43,7 +43,7 @@ class Solution {
 }
 ```
 
-# Implementation 2 : Optimized
+# Implementation 2 : Optimized  Time : O(n), Space : O(n)
 ```java
 class Solution {
     public int trap(int[] height) {
